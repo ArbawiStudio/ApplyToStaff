@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ArbawiStudio/Apply#readme",
   "dependencies": {
-    "discord.js": "^14.4.0"
+    "discord.js": "^14.4.0",
+    "quick.db": "^7.1.3"
   }
 }
