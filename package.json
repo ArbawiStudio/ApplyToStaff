@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ArbawiStudio/Apply/issues"
   },
-  "homepage": "https://github.com/ArbawiStudio/Apply#readme"
+  "homepage": "https://github.com/ArbawiStudio/Apply#readme",
+  "dependencies": {
+    "discord.js": "^14.4.0"
+  }
 }
