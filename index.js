@@ -1,7 +1,7 @@
 const { Client, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ModalBuilder, TextInputBuilder, TextInputStyle, ComponentType } = require('discord.js')
 const client = new Client({ intents: ['Guilds', 'GuildMessages', 'MessageContent', 'DirectMessages'] })
 const Config = {
-    StaffRole: '1023339532818583583',
+    StaffRole: '',
     Token: ''
 }
 
@@ -78,22 +78,7 @@ client.on('interactionCreate', async Interaction => {
                        .addFields({ name: 'The Country', value: `${Country}`, inline: true })
                        .addFields({ name: 'User Online Count', value: `${Online}`, inline: true  })
                        .addFields({ name: 'Joined Discord At', value: `<t:${parseInt(Interaction.member.user.createdAt / 1000)}:f>`, inline: true  })
-                ],
-                components: [
-                    new ActionRowBuilder()
-                       .addComponents(
-                          new ButtonBuilder() .setStyle(ButtonStyle.Primary) .setLabel('Accept User') .setCustomId(`Accept`),
-                          new ButtonBuilder() .setStyle(ButtonStyle.Danger) .setLabel('Unaccept User') .setCustomId(`Unaccept`)
-                       )
-                ] })
-            const Filter = M => M.user.id === Interaction.user.id;
-            const Collector = Interaction.channel.createMessageComponentCollector({ Filter, componentType: ComponentType.Button })
-            Collector.on('collect', async TOBZi => {
-                if(TOBZi.customId === 'Accept') {
-                    await TOBZi.deferUpdate().catch(() => {})
-                    User.send({ content: `Hello ${User.username}, You have been Accepted in the Team` })
-                }
-            })
+                ]})
         }
     }
 })
